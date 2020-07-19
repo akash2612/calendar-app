@@ -1,0 +1,27 @@
+<div class="cp-calendar">
+    <div class="cal-cont">
+        <div class="days-wrap">
+        <ul class="list">
+            <li class="item">Sun</li>
+            <li class="item">Mon</li>
+            <li class="item">Tue</li>
+            <li class="item">Wed</li>
+            <li class="item">Thu</li>
+            <li class="item">Fri</li>
+            <li class="item">Sat</li>
+        </ul>
+        </div>
+        <div class="date-wrap">
+        <ul class="list">
+            <li class="item" *ngFor="let item of dateArr" [attr.data-dt]="item.dateObj" [ngClass]="{'active':item.currDt,'disable':!item.currMn}">
+                <div class="date">{{item.dateNo}}</div>
+            </li>
+        </ul>
+        </div>
+        <div class="cal-mnt-toggle">
+                <button class="btn-prev" (click)="changeMnth(monthVal,yr,$event)"><span class="icon icon-prev"></span></button>
+            <span class="month-name"><span class="m-name">{{monthVal}}</span><span class="year">{{yr}}</span></span>
+            <button class="btn-next" (click)="changeMnth(monthVal,yr,$event)"><span class="icon icon-next"></span></button>
+        </div>
+    </div>
+</div>

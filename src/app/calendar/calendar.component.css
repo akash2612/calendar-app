@@ -1,0 +1,212 @@
+ul,
+ol,
+dd {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.title {
+    font-size: 52px;
+    line-height: 54px;
+    color: #555;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.cp-calendar {
+    padding-top: 4rem;
+    position: relative;
+    width: 50rem;
+    margin: 0 auto;
+}
+.cp-calendar .cal-cont {
+    border: 1px solid #e8ecf8;
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 0 0 20px 0 #edf1ff;
+}
+.cp-calendar .date-wrap .list:before, .cp-calendar .days-wrap .list:before, .cp-calendar .date-wrap .list:after, .cp-calendar .days-wrap .list:after {
+    display: table;
+    content: '';
+    clear: both;
+}
+.cp-calendar .date-wrap .item, .cp-calendar .days-wrap .item {
+    width: calc(100%/7);
+    text-align: center;
+    float: left;
+}
+.cp-calendar .days-wrap .item {
+    padding: 1.5rem 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    text-align: right;
+}
+.cp-calendar .date-wrap .item {
+    position: relative;
+    height: 7rem;
+    border: 1px solid #e8ecf8;
+    border-bottom: none;
+    border-left: none;
+    background: #fff;
+}
+.cp-calendar .date-wrap .item:nth-of-type(7n) {
+    border-right: none;
+}
+.cp-calendar .date-wrap .item:nth-of-type(7n+1) {
+    border-left: none;
+}
+.cp-calendar .date-wrap .item:first-of-type {
+    border-left: none;
+    border-right: 1px solid #e8ecf8;
+}
+.cp-calendar .date-wrap .item .date {
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+.cp-calendar .date-wrap .item .task-type {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2.8rem;
+}
+.cp-calendar .date-wrap .item.disable .date {
+    color: #999;
+}
+.cp-calendar .date-wrap .item.active {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px 0 #c3cff0;
+    z-index: 1;
+}
+.cp-calendar .date-wrap .item.active .date {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+.cp-calendar .cal-mnt-toggle {
+    position: absolute;
+    top: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+.cp-calendar .cal-mnt-toggle button {
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+.cp-calendar .cal-mnt-toggle button:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+.cp-calendar .cal-mnt-toggle button .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.cp-calendar .cal-mnt-toggle button .icon-prev {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDkwLjc4NyA0OTAuNzg3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTAuNzg3IDQ5MC43ODc7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiMzMDdmZTI7IiBkPSJNMzYyLjY3MSw0OTAuNzg3Yy0yLjgzMSwwLjAwNS01LjU0OC0xLjExNS03LjU1Mi0zLjExNUwxMjAuNDUyLDI1My4wMDYNCgljLTQuMTY0LTQuMTY1LTQuMTY0LTEwLjkxNywwLTE1LjA4M0wzNTUuMTE5LDMuMjU2YzQuMDkzLTQuMjM3LDEwLjg0NS00LjM1NCwxNS4wODMtMC4yNjJjNC4yMzcsNC4wOTMsNC4zNTQsMTAuODQ1LDAuMjYyLDE1LjA4Mw0KCWMtMC4wODYsMC4wODktMC4xNzMsMC4xNzYtMC4yNjIsMC4yNjJMMTQzLjA4NywyNDUuNDU0bDIyNy4xMzYsMjI3LjExNWM0LjE3MSw0LjE2LDQuMTc5LDEwLjkxNCwwLjAxOSwxNS4wODUNCglDMzY4LjIzNiw0ODkuNjY0LDM2NS41MTEsNDkwLjc5MiwzNjIuNjcxLDQ5MC43ODd6Ii8+DQo8cGF0aCBkPSJNMzYyLjY3MSw0OTAuNzg3Yy0yLjgzMSwwLjAwNS01LjU0OC0xLjExNS03LjU1Mi0zLjExNUwxMjAuNDUyLDI1My4wMDZjLTQuMTY0LTQuMTY1LTQuMTY0LTEwLjkxNywwLTE1LjA4M0wzNTUuMTE5LDMuMjU2DQoJYzQuMDkzLTQuMjM3LDEwLjg0NS00LjM1NCwxNS4wODMtMC4yNjJjNC4yMzcsNC4wOTMsNC4zNTQsMTAuODQ1LDAuMjYyLDE1LjA4M2MtMC4wODYsMC4wODktMC4xNzMsMC4xNzYtMC4yNjIsMC4yNjINCglMMTQzLjA4NywyNDUuNDU0bDIyNy4xMzYsMjI3LjExNWM0LjE3MSw0LjE2LDQuMTc5LDEwLjkxNCwwLjAxOSwxNS4wODVDMzY4LjIzNiw0ODkuNjY0LDM2NS41MTEsNDkwLjc5MiwzNjIuNjcxLDQ5MC43ODd6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==");
+}
+.cp-calendar .cal-mnt-toggle button .icon-next {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDkwLjggNDkwLjgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MC44IDQ5MC44OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBzdHlsZT0iZmlsbDojMzA3ZmUyOyIgZD0iTTEzNS42ODUsMy4xMjhjLTQuMjM3LTQuMDkzLTEwLjk5LTMuOTc1LTE1LjA4MywwLjI2MmMtMy45OTIsNC4xMzQtMy45OTIsMTAuNjg3LDAsMTQuODINCglsMjI3LjExNSwyMjcuMTM2TDEyMC41ODEsNDcyLjQ2MWMtNC4yMzcsNC4wOTMtNC4zNTQsMTAuODQ1LTAuMjYyLDE1LjA4M2M0LjA5Myw0LjIzNywxMC44NDUsNC4zNTQsMTUuMDgzLDAuMjYyDQoJYzAuMDg5LTAuMDg2LDAuMTc2LTAuMTczLDAuMjYyLTAuMjYybDIzNC42NjctMjM0LjY2N2M0LjE2NC00LjE2NSw0LjE2NC0xMC45MTcsMC0xNS4wODNMMTM1LjY4NSwzLjEyOHoiLz4NCjxwYXRoIGQ9Ik0xMjguMTMzLDQ5MC42OGMtNS44OTEsMC4wMTEtMTAuNjc1LTQuNzU3LTEwLjY4Ni0xMC42NDhjLTAuMDA1LTIuODQsMS4xMjMtNS41NjUsMy4xMzQtNy41NzFsMjI3LjEzNi0yMjcuMTE1DQoJTDEyMC41ODEsMTguMjMyYy00LjE3MS00LjE3MS00LjE3MS0xMC45MzMsMC0xNS4xMDRjNC4xNzEtNC4xNzEsMTAuOTMzLTQuMTcxLDE1LjEwNCwwbDIzNC42NjcsMjM0LjY2Nw0KCWM0LjE2NCw0LjE2NSw0LjE2NCwxMC45MTcsMCwxNS4wODNMMTM1LjY4NSw0ODcuNTQ0QzEzMy42ODUsNDg5LjU1MSwxMzAuOTY3LDQ5MC42OCwxMjguMTMzLDQ5MC42OHoiLz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K");
+}
+.cp-calendar .cal-mnt-toggle .month-name {
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    display: inline-block;
+    vertical-align: middle;
+    color: #307fe2;
+    margin: 0 1.5rem;
+    width: 7rem;
+    text-align: center;
+}
+.cp-calendar .cal-mnt-toggle .month-name .m-name {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+.cp-calendar .cal-mnt-toggle .month-name .year {
+    display: inline-block;
+}
+@media only screen and (max-width: 1024px) {
+    .cp-calendar {
+        border: none;
+   }
+    .cp-calendar .cal-filter {
+        padding-bottom: 0.5rem;
+        border: 1px solid #e8ecf8;
+   }
+    .cp-calendar .cal-filter .list .item {
+        height: 4.5rem;
+        font-weight: 400;
+        padding: 0.6rem 0;
+   }
+    .cp-calendar .cal-filter .list .item .count {
+        display: block;
+        text-align: center;
+   }
+    .cp-calendar .cal-filter .list .item:before {
+        height: 0.5rem;
+        bottom: -0.5rem;
+   }
+    .cp-calendar .cal-filter .list .item:after {
+        border-right-width: 0.5rem;
+        border-left-width: 0.5rem;
+        border-bottom-width: 0.5rem;
+        bottom: -0.5rem;
+   }
+    .cp-calendar .date-wrap .item {
+        height: 5rem;
+   }
+    .cp-calendar .date-wrap .item .task-type {
+        display: none;
+   }
+    .cp-calendar .date-selection {
+        height: 5rem;
+        display: flex !important;
+        align-items: center;
+        padding: 0 1.2rem;
+   }
+    .cp-calendar .date-selection .cal-btn .icon {
+        font-size: 2rem;
+        color: #307fe2;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 1rem;
+   }
+    .cp-calendar .date-selection .cal-btn .date-wrap {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+   }
+    .cp-calendar .date-selection .cal-btn .date-wrap .month {
+        display: inline-block;
+   }
+    .cp-calendar .date-selection .cal-btn .date-wrap .day {
+        display: inline-block;
+        margin-right: 0.3rem;
+   }
+}
